@@ -19,4 +19,3 @@ flowchart TD
   M --> N
 ```
 
-The current endpoint is a reproducible results package and method/parameter manifest. The five-child discrepancy audit is a planned follow-up, not a completed result. This workflow does not define a new truth set and does not include the legacy 17-truth rescue experiments.
