@@ -1,0 +1,39 @@
+# Large sequencing and assembly files
+*.bam
+*.bai
+*.cram
+*.crai
+*.fastq
+*.fastq.gz
+*.fa
+*.fasta
+*.fai
+*.gfa
+*.paf
+*.paf.gz
+*.vcf.gz
+*.bcf
+
+# Generated outputs and logs
+results/raw/
+results/logs/
+results/*.bam
+results/*.bai
+results/*.fa
+results/*.fasta
+results/*.gfa
+results/*.paf
+results/*.vcf
+results/*.bcf
+logs/
+tmp/
+*.log
+
+# Local configuration and credentials
+config/*.local.*
+config/*.local.env
+*.pem
+*.key
+*.token
+__pycache__/
+*.pyc

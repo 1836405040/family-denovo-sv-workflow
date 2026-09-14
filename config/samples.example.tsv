@@ -1,0 +1,11 @@
+family	sample	role	sex	bam	bai	assembly_hap1	assembly_hap2	assembly_source
+HG002_trio	HG002	child	XY	/path/HG002.bam	/path/HG002.bam.bai	/path/HG002.hap1.fa	/path/HG002.hap2.fa	hifiasm
+HG002_trio	HG003	father	XY	/path/HG003.bam	/path/HG003.bam.bai	/path/HG003.hap1.fa	/path/HG003.hap2.fa	hifiasm
+HG002_trio	HG004	mother	XX	/path/HG004.bam	/path/HG004.bam.bai	/path/HG004.hap1.fa	/path/HG004.hap2.fa	hifiasm
+five_child	NA12877	father	XY	/path/NA12877.bam	/path/NA12877.bam.bai	/path/NA12877.hap1.fa	/path/NA12877.hap2.fa	existing_assembly
+five_child	NA12878	mother	XX	/path/NA12878.bam	/path/NA12878.bam.bai	/path/NA12878.hap1.fa	/path/NA12878.hap2.fa	existing_assembly
+five_child	NA12879	child	XX	/path/NA12879.bam	/path/NA12879.bam.bai	/path/NA12879.hap1.fa	/path/NA12879.hap2.fa	hifiasm
+five_child	NA12881	child	XX	/path/NA12881.bam	/path/NA12881.bam.bai	/path/NA12881.hap1.fa	/path/NA12881.hap2.fa	hifiasm
+five_child	NA12882	child	XX	/path/NA12882.bam	/path/NA12882.bam.bai	/path/NA12882.hap1.fa	/path/NA12882.hap2.fa	hifiasm
+five_child	NA12885	child	XX	/path/NA12885.bam	/path/NA12885.bam.bai	/path/NA12885.hap1.fa	/path/NA12885.hap2.fa	hifiasm
+five_child	NA12886	child	XX	/path/NA12886.bam	/path/NA12886.bam.bai	/path/NA12886.hap1.fa	/path/NA12886.hap2.fa	hifiasm

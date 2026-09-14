@@ -1,0 +1,12 @@
+stage_id	stage_name	family	start_condition	main_outputs	end_condition
+S0	input_registration	both	manifests and software versions are listed	input manifest; parameter file; checksums	all required inputs are validated
+S1	haplotype_assembly	HG002_trio	three HiFi BAM/BAI pass validation	hap1/hap2 FASTA; assembly QC	three assemblies and indexes are valid
+S2	haplotype_assembly	five_child	five child BAM/BAI pass validation; parent assembly provenance recorded	five child hap FASTA; parent provenance/QC	child assemblies and parent status are explicit
+S3	assembly_derived_calling	both	hap FASTA and reference pass validation	PAF; paftools VCF; normalized events	all samples have comparable assembly-derived calls
+S4	caller_discovery	HG002_trio	trio BAM/BAI pass validation	Sniffles2; LongcallD; TRGT-denovo outputs	raw caller outputs and versions are auditable
+S5	child_only_normalization	HG002_trio	caller records and parental records exist	child-only VCF; audit TSV	parent subtraction is reproducible
+S6	caller_union_dedup	HG002_trio	child-only VCFs exist	joint VCF; source IDs; dedup audit	duplicate removal is independently countable
+S7	minisv_triofilter	both	caller input and parental hap assemblies exist	per-caller and joint C2/C3 outputs	all requested runs finish with parameter audit
+S8	cross_family_overlap	both	assembly-derived and Minisv definitions are recorded	overlap matrix; layer counts	both families use the same event definition
+S9	five_child_anomaly_audit	five_child	S8 identifies excess no-parent-match events	QC strata; sampled-locus audit; anomaly report	major causes are explained or marked unresolved
+S10	phase_summary	both	S7-S9 outputs and audits exist	result table; manifests; anomaly report	results are reviewable without server-specific assumptions
