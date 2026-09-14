@@ -21,11 +21,4 @@ Assembly-derived first-pass calls use `minimap2 -x asm5 --cs` plus `paftools.js 
 
 The three-caller union retains source caller and source IDs and removes records that fall within the same chromosome/type, breakpoint tolerance 100 bp, and absolute length tolerance 50 bp cluster.
 
-## Required additions before a final release
 
-- Replace absolute server paths with configuration variables.
-- Add an input validator and checksum manifest generator.
-- Add explicit MAPQ, primary/secondary alignment, gap, contig-end, and uniqueness fields to the assembly-derived audit.
-- Add a common event-level overlap script for assembly-derived versus caller/Minisv outputs.
-- Add a five-child anomaly report instead of reporting only total counts (not completed in this release).
-- Record exact command lines and versions for every result directory.
