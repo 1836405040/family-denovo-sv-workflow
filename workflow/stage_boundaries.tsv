@@ -8,5 +8,5 @@ S5	child_only_normalization	HG002_trio	caller records and parental records exist
 S6	caller_union_dedup	HG002_trio	child-only VCFs exist	joint VCF; source IDs; dedup audit	duplicate removal is independently countable
 S7	minisv_triofilter	both	caller input and parental hap assemblies exist	per-caller and joint C2/C3 outputs	all requested runs finish with parameter audit
 S8	cross_family_overlap	both	assembly-derived and Minisv definitions are recorded	overlap matrix; layer counts	both families use the same event definition
-S9	five_child_anomaly_audit	five_child	S8 identifies excess no-parent-match events	QC strata; sampled-locus audit; anomaly report	major causes are explained or marked unresolved
-S10	phase_summary	both	S7-S9 outputs and audits exist	result table; manifests; anomaly report	results are reviewable without server-specific assumptions
+S9	five_child_anomaly_audit	five_child	S8 outputs exist	planned QC strata; planned sampled-locus audit; planned anomaly report	NOT_STARTED in this release
+S10	phase_summary	both	S7 outputs and existing summaries exist	result table; manifests	current results are reviewable without server-specific assumptions

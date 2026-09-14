@@ -6,12 +6,12 @@ The repository is intended for code review and reproducibility. Sequencing data,
 
 ## Scope
 
-The workflow starts with validated input manifests and ends with a reproducible results table plus an anomaly audit.
+The workflow starts with validated input manifests and currently ends with a reproducible results table and method/parameter manifests. The five-child discrepancy is documented as an open follow-up, not as a completed diagnosis.
 
 It contains two branches:
 
 - **HG002 trio**: HG002 child with HG003/HG004 parents. This branch runs haplotype assembly, assembly-derived SV extraction, Sniffles2, LongcallD, TRGT-denovo, child-only normalization, caller union/deduplication, and Minisv C2/C3.
-- **Five-child pedigree**: NA12877/NA12878 parents with NA12879, NA12881, NA12882, NA12885, and NA12886 children. This branch includes parent assembly provenance/QC, child assembly, assembly-derived calling, comparison with the existing caller/Minisv results, and diagnosis of the unexpectedly large `both child haps / no parent match` category.
+- **Five-child pedigree**: NA12877/NA12878 parents with NA12879, NA12881, NA12882, NA12885, and NA12886 children. This release includes the existing child assembly, assembly-derived results, and existing caller/Minisv results for reproducibility. The unexpectedly large `both child haps / no parent match` category remains undiagnosed and is a follow-up task.
 
 The 17 legacy truth records, their rescue experiments, VISOR work, and any new truth-definition procedure are outside this release.
 
@@ -27,9 +27,9 @@ Start:
 End:
 
 1. Per-caller and joint Minisv C2/C3 counts are reproducible.
-2. Assembly-derived event classes and event-level overlap are reproducible.
-3. The five-child anomaly audit reports QC strata, parent-match evidence, double-haplotype consistency, and unresolved loci.
-4. A result table, command manifest, and input checksum table are produced.
+2. Assembly-derived event classes and the currently available method-level comparisons are reproducible.
+3. Existing two-family result tables, command manifests, and input checksum tables are documented.
+4. A future five-child anomaly audit is specified, but is not claimed as completed by this release.
 
 ## Workflow
 
@@ -42,8 +42,9 @@ input manifest and validation
   -> caller union and duplicate removal
   -> per-caller and joint Minisv C2/C3
   -> assembly-derived family classification
-  -> cross-method overlap and five-child anomaly audit
+  -> cross-method overlap and existing result summaries
   -> final tables and manifests
+  -> future five-child anomaly audit (not yet performed)
 ```
 
 See [`workflow/CODE_MAP.md`](workflow/CODE_MAP.md), [`workflow/stage_boundaries.tsv`](workflow/stage_boundaries.tsv), and [`workflow/flowchart.md`](workflow/flowchart.md).
