@@ -6,14 +6,13 @@ The repository is intended for code review and reproducibility. Sequencing data,
 
 ## Scope
 
-The workflow starts with validated input manifests and currently ends with a reproducible results table and method/parameter manifests. The five-child discrepancy is documented as an open follow-up, not as a completed diagnosis.
+The workflow starts with validated input manifests and currently ends with a reproducible results table and method/parameter manifests. 
 
 It contains two branches:
 
 - **HG002 trio**: HG002 child with HG003/HG004 parents. This branch runs haplotype assembly, assembly-derived SV extraction, Sniffles2, LongcallD, TRGT-denovo, child-only normalization, caller union/deduplication, and Minisv C2/C3.
-- **Five-child pedigree**: NA12877/NA12878 parents with NA12879, NA12881, NA12882, NA12885, and NA12886 children. This release includes the existing child assembly, assembly-derived results, and existing caller/Minisv results for reproducibility. The unexpectedly large `both child haps / no parent match` category remains undiagnosed and is a follow-up task.
+- **Five-child pedigree**: NA12877/NA12878 parents with NA12879, NA12881, NA12882, NA12885, and NA12886 children. This release includes the existing child assembly, assembly-derived results, and existing caller/Minisv results for reproducibility.
 
-The 17 legacy truth records, their rescue experiments, VISOR work, and any new truth-definition procedure are outside this release.
 
 ## Start and end
 
@@ -29,7 +28,6 @@ End:
 1. Per-caller and joint Minisv C2/C3 counts are reproducible.
 2. Assembly-derived event classes and the currently available method-level comparisons are reproducible.
 3. Existing two-family result tables, command manifests, and input checksum tables are documented.
-4. A future five-child anomaly audit is specified, but is not claimed as completed by this release.
 
 ## Workflow
 
@@ -53,9 +51,7 @@ See [`workflow/CODE_MAP.md`](workflow/CODE_MAP.md), [`workflow/stage_boundaries.
 
 Copy `config/config.example.env` to a private local file and fill in paths. Do not commit the local file. Copy `config/samples.example.tsv` and replace sample paths with paths available on the execution system.
 
-The current server implementation uses `minimap2 -x asm5 --cs` and `paftools.js call` for assembly-derived calls, with an initial absolute SV length threshold of 50 bp, breakpoint tolerance of 100 bp, and absolute length tolerance of 50 bp. The published pipeline must keep these values in the parameter file rather than hard-coding them.
-
-The existing table's `defaultbase` Minisv runs and tuned/frozen runs are separate experiments. Their parameters must be recorded separately and must not be combined by directory name alone.
+The current server implementation uses `minimap2 -x asm5 --cs` and `paftools.js call` for assembly-derived calls, with an initial absolute SV length threshold of 50 bp, breakpoint tolerance of 100 bp, and absolute length tolerance of 50 bp.
 
 ## Repository layout
 
@@ -66,12 +62,4 @@ workflow/               stage map and data-product contracts
 results/                ignored; only small, de-identified summaries belong here
 ```
 
-The exact server scripts used for the previous table are listed in `scripts/SCRIPT_INVENTORY.md`. Before the first public release, each script should be converted to use the configuration templates instead of server-specific absolute paths.
 
-## Review rules
-
-- Preserve raw caller records, source IDs, read names, deduplication decisions, and command parameters.
-- Do not compare total counts unless the event definition and thresholds are identical.
-- Treat `both child haps / no parent match` as a candidate class, not as confirmed de novo SV.
-- Keep assembly-derived classification independent of Minisv pass/fail to avoid circular evaluation.
-- Never commit BAM/FASTA/VCF data, SSH configuration, private keys, access tokens, or server credentials.
