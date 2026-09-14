@@ -16,6 +16,4 @@ The files below are the exact local/server implementation snapshots that produce
 | Minisv C2/C3 | `run_hg002_trio_minisv_triofilter_v1.sh` and `run_hg002_threecaller_c2c3_defaultbase.sh` | snapshot; separate run specs |
 | Summary | `build_two_pedigree_results_report.py` | snapshot; add anomaly audit |
 
-The publication package intentionally does not include `build_gold_standard_registry_v1.py`, `gold_standard_*`, `CHM13_17_truth_*`, or old truth-rescue scripts.
 
-Run `python scripts/check_publication.py` before every commit. It should pass only after source snapshots have been converted to configuration-driven scripts or deliberately excluded from the public commit.
