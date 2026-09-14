@@ -49,8 +49,6 @@ See [`workflow/CODE_MAP.md`](workflow/CODE_MAP.md), [`workflow/stage_boundaries.
 
 ## Configuration
 
-Copy `config/config.example.env` to a private local file and fill in paths. Do not commit the local file. Copy `config/samples.example.tsv` and replace sample paths with paths available on the execution system.
-
 The current server implementation uses `minimap2 -x asm5 --cs` and `paftools.js call` for assembly-derived calls, with an initial absolute SV length threshold of 50 bp, breakpoint tolerance of 100 bp, and absolute length tolerance of 50 bp.
 
 ## Repository layout
