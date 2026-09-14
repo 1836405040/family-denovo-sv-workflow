@@ -46,7 +46,7 @@ input manifest and validation
   -> final tables and manifests
 ```
 
-See [`workflow/CODE_MAP.md`](workflow/CODE_MAP.md) and [`workflow/stage_boundaries.tsv`](workflow/stage_boundaries.tsv).
+See [`workflow/CODE_MAP.md`](workflow/CODE_MAP.md), [`workflow/stage_boundaries.tsv`](workflow/stage_boundaries.tsv), and [`workflow/flowchart.md`](workflow/flowchart.md).
 
 ## Configuration
 
